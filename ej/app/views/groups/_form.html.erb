@@ -1,0 +1,30 @@
+<%= form_for(@group) do |f| %>
+  
+
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+  <%= f.nested_fields_for :memberships do |memberships_form| %>
+    <h4>Choose a user:</h4>
+        <%= memberships_form.select :user_id, @users.all.collect {|u| [u.name, u.id]}%>
+        <%= memberships_form.hidden_field :group_id, value: @group.id %>
+        <%= memberships_form.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %>
+    <br>
+    <% end %>
+    <%= f.add_nested_fields_link :memberships, 'Add Another User', class: 'btn btn-primary', role: 'button' %>
+  <br>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

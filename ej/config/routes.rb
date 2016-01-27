@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :memberships
+  resources :groups
   mount Ckeditor::Engine => '/ckeditor'
   get 'posts/inclass' => 'posts#inclass'
   get 'posts/myposts' => 'posts#myposts'

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Groups</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Group Number</th>
+      <th>Group Members</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= group.id %></td>
+        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><% group.memberships.each do |membership| %>
+        <%= membership.user.name %><br>
+        <% end %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group', new_group_path %>
