@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="page-header">
-  <h1><%= @post.headline %><small>                  by: <%= @post.user.name %></small></h1>
+  <h1><%= @post.headline %><small>                  by: <% if current_user.admin? %>
+                                                          <%= @post.user.name %>
+                                                        <% else %>
+                                                          <%= @post.user.nickname %>
+                                                        <% end %></small></h1>
 </div>
 <h4>Position: <% if @post.position.nil? %>
             No position for this assignment
@@ -57,7 +61,11 @@
 	<%@comments.each do |c|%>
 		<tr>
 			<td width="80%"><%=c.content.html_safe%></td>
-			<td width="20%" align="right">Commenter: <%=c.user.name%></td>
+			<td width="20%" align="right">Commenter: <% if current_user.admin? %>
+			                                           <%=c.user.name%>
+			                                         <% else %>
+			                                           <%=c.user.nickname%>
+			                                         <% end %></td>
 		</tr>
 	<%end%>
 </table>

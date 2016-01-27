@@ -8,7 +8,7 @@
       <% if post.submitted %>
           <tr>
             <td>
-              <h4><b><u><%= 'Headline:'%></u></b> <%= post.headline %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><u><%= 'Author:'%></b></u> <%= post.user.name %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><u><%= 'Position:'%></b></u> <% if post.position.nil? %>
+              <h4><b><u><%= 'Headline:'%></u></b> <%= post.headline %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><u><%= 'Author:'%></b></u> <%= post.user.nickname %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b><u><%= 'Position:'%></b></u> <% if post.position.nil? %>
             No position for this assignment
             <% else %>
             <%= post.position.title %>

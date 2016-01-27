@@ -12,7 +12,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    
+  <% if current_user != NIL %>  
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if current_user.admin? %>
@@ -33,7 +33,7 @@
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
-
+   <% end %>
   </div><!-- /.container-fluid -->
   
 </nav>

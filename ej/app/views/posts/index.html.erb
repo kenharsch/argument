@@ -17,35 +17,35 @@
             <td><h4><%= post.headline %></h4></td>
             <td><%= post.user.name %></td>
             <% if post.position.nil? %>
-            <td>No position for this assignment</td>
+              <td>No position for this assignment</td>
             <% else %>
-            <td><%= post.position.title %></td>
+              <td><%= post.position.title %></td>
             <% end %>
             <td><%= link_to 'Go to Post', post, class:'btn btn-default btn-sm' %></td>
           </tr>
         <% else %>
           <% if @assignment.positions.count == 1 || @assignment.positions.count == 0 %>
             <tr>
-            <td><%= post.headline %></td>
-            <td><%= post.user.name %></td>
-            <% if post.position.nil? %>
-            <td>No position for this assignment</td>
-            <% else %>
-            <td><%= post.position.title %></td>
-            <% end %>
-            <td><%= link_to 'Go to Post', post, class:'btn btn-default btn-sm' %></td>
-          </tr>
+              <td><%= post.headline %></td>
+              <td><%= post.user.nickname %></td>
+              <% if post.position.nil? %>
+                <td>No position for this assignment</td>
+              <% else %>
+                <td><%= post.position.title %></td>
+              <% end %>
+              <td><%= link_to 'Go to Post', post, class:'btn btn-default btn-sm' %></td>
+            </tr>
           <% elsif @post.position_id != post.position_id %> 
-             <tr>
-            <td><%= post.headline %></td>
-            <td><%= post.user.name %></td>
-            <% if post.position.nil? %>
-            <td>No position for this assignment</td>
-            <% else %>
-            <td><%= post.position.title %></td>
-            <% end %>
-            <td><%= link_to 'Go to Post', post, class:'btn btn-default btn-sm' %></td>
-          </tr>
+            <tr>
+              <td><%= post.headline %></td>
+              <td><%= post.user.nickname %></td>
+              <% if post.position.nil? %>
+                <td>No position for this assignment</td>
+              <% else %>
+                <td><%= post.position.title %></td>
+              <% end %>
+              <td><%= link_to 'Go to Post', post, class:'btn btn-default btn-sm' %></td>
+            </tr>
           <% end %>
         <% end %>
       <% end %>
