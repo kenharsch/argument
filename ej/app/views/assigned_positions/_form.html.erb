@@ -1,0 +1,17 @@
+<%= form_for(@assigned_position) do |f| %>
+  <% if @assigned_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assigned_position.errors.count, "error") %> prohibited this assigned_position from being saved:</h2>
+
+      <ul>
+      <% @assigned_position.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

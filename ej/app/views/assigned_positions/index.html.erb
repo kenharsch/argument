@@ -1,0 +1,46 @@
+  <p id="notice"><%= notice %></p>
+
+  <h1>Listing Assigned Positions</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @assigned_positions.each do |assigned_position| %>
+        <tr>
+          <td><%= link_to 'Show', assigned_position %></td>
+          <td><%= link_to 'Edit', edit_assigned_position_path(assigned_position) %></td>
+          <td><%= link_to 'Destroy', assigned_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% @assignments.each do |assignment| %>
+  <p><h4><%= assignment.title %></h4></p>
+    <% @groups.each do |group| %>
+      <p><h4><%= group.id %></h4>
+        <% group.users.each do |user| %>
+                <p><%= user.name %>
+                  <% if user.assigned_positions.last %>
+                  <p><%= user.assigned_positions.last.position.title %></p>
+                  <% end %>
+                  <%= form_for(@assigned_position) do |f| %> 
+                 <%= f.select :position_id, @positions.all.collect {|a| [a.title, a.id]} %>
+                 <%= f.hidden_field :assignment_id, value: assignment.id %>
+                 <%= f.hidden_field :user_id, value: user.id %>
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+              <% end %>
+        <% end %>
+    <% end %>
+  <% end %>
+
+  <br>
+
+  <%= link_to 'New Assigned position', new_assigned_position_path %>

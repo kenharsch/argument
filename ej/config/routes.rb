@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :assigned_positions
   resources :memberships
   resources :groups
   mount Ckeditor::Engine => '/ckeditor'

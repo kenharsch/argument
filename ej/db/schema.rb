@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127184141) do
+ActiveRecord::Schema.define(version: 20160128205247) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20160127184141) do
   add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
   add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
   add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
+
+  create_table "assigned_positions", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "position_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "assignments", force: :cascade do |t|
     t.string   "title",          limit: 255

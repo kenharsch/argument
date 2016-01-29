@@ -1,0 +1,2 @@
+module AssignedPositionsHelper
+end
