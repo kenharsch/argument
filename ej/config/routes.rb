@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'evaluations/index'
+  post 'evaluations/save_rankings'
+  resources :evaluations
   resources :assigned_positions
   resources :memberships
   resources :groups

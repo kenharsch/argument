@@ -74,6 +74,10 @@ class PostsController < ApplicationController
     else 
       @post.submitted = false
     end
+
+    if current_user.assigned_positions.last
+      @post.position_id = current_user.assigned_positions.last.position.id
+    end
     
     respond_to do |format|
       if @post.save

@@ -22,3 +22,47 @@
    Position.create(title: 'For', assignment_id: 1)
    Position.create(title: 'Against', assignment_id: 1)
    Position.create(title: 'Neutral', assignment_id: 1)
+
+   Post.create(headline: 'Headline3', draft1: 'Draft 1-3', draft2: 'Draft2-3', user_id: 3, assignment_id: 1, submitted: true)
+   Post.create(headline: 'Headline4', draft1: 'Draft 1-4', draft2: 'Draft2-4', user_id: 4, assignment_id: 1, submitted: true)
+   Post.create(headline: 'Headline5', draft1: 'Draft 1-5', draft2: 'Draft2-5', user_id: 5, assignment_id: 1, submitted: true)
+   Post.create(headline: 'Headline6', draft1: 'Draft 1-6', draft2: 'Draft2-6', user_id: 6, assignment_id: 1, submitted: true)
+   Post.create(headline: 'Headline7', draft1: 'Draft 1-7', draft2: 'Draft2-7', user_id: 7, assignment_id: 1, submitted: true)
+   Post.create(headline: 'Headline8', draft1: 'Draft 1-8', draft2: 'Draft2-8', user_id: 8, assignment_id: 1, submitted: true)
+
+   Post.create(headline: 'Headline3', draft1: 'Draft 1-3', user_id: 3, assignment_id: 2)
+   Post.create(headline: 'Headline4', draft1: 'Draft 1-4', user_id: 4, assignment_id: 2)
+   Post.create(headline: 'Headline5', draft1: 'Draft 1-5', user_id: 5, assignment_id: 2)
+   Post.create(headline: 'Headline6', draft1: 'Draft 1-6', user_id: 6, assignment_id: 2)
+   Post.create(headline: 'Headline7', draft1: 'Draft 1-7', user_id: 7, assignment_id: 2)
+   Post.create(headline: 'Headline8', draft1: 'Draft 1-8', user_id: 8, assignment_id: 2)
+   
+   Evaluation.create(post_id: 1, user_id: 4)
+   Evaluation.create(post_id: 3, user_id: 4)
+   Evaluation.create(post_id: 4, user_id: 4)
+   Evaluation.create(post_id: 5, user_id: 4)
+
+   Evaluation.create(post_id: 2, user_id: 3)
+   Evaluation.create(post_id: 3, user_id: 3)
+   Evaluation.create(post_id: 4, user_id: 3)
+   Evaluation.create(post_id: 5, user_id: 3)
+
+   Evaluation.create(post_id: 2, user_id: 5)
+   Evaluation.create(post_id: 4, user_id: 5)
+   Evaluation.create(post_id: 5, user_id: 5)
+   Evaluation.create(post_id: 6, user_id: 5)
+
+   Evaluation.create(post_id: 1, user_id: 6)
+   Evaluation.create(post_id: 2, user_id: 6)
+   Evaluation.create(post_id: 4, user_id: 6)
+   Evaluation.create(post_id: 6, user_id: 6)
+
+   Evaluation.create(post_id: 1, user_id: 7)
+   Evaluation.create(post_id: 3, user_id: 7)
+   Evaluation.create(post_id: 2, user_id: 7)
+   Evaluation.create(post_id: 5, user_id: 7)
+
+   Evaluation.create(post_id: 1, user_id: 8)
+   Evaluation.create(post_id: 3, user_id: 8)
+   Evaluation.create(post_id: 4, user_id: 8)
+   Evaluation.create(post_id: 6, user_id: 8)
