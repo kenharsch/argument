@@ -42,6 +42,12 @@ class PostsController < ApplicationController
   def new
     @assignment = Assignment.find(params[:assignment_id])
     @post = Post.new(assignment_id: @assignment.id)
+
+    if current_user.assigned_positions.last
+      @position_title = current_user.positions.last.title
+    else
+      @position_title = "No Position"
+    end
   end
 
   # GET /posts/1/edit
@@ -49,6 +55,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @assignment = Assignment.find(@post.assignment_id)
     ahoy.track "Edited Post", post_id: @post.id
+    if current_user.assigned_positions.last
+      @position_title = current_user.positions.last.title
+    else
+      @position_title = "No Position"
+    end
   end
 
   # POST /posts
