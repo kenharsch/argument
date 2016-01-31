@@ -13,9 +13,11 @@
 //= require jquery
 //= require ahoy
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require_tree .
 //= require ckeditor/init
 //= require nested_form_fields
+//= require_tree .
+

@@ -19,6 +19,7 @@
         <li class="topbar-link"><%= link_to 'Groups', {:controller => 'groups', :action => 'index'} %></li>
         <% elsif !current_user.admin %>
           <li><%= link_to 'My Posts', posts_myposts_path %></li>
+          <li><%= link_to 'My Evaluations', evaluations_path %></li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
