@@ -18,7 +18,7 @@
         <% else %>
           <td><h3>Start/Edit Post</h3></td>
           <td><h3>My Post</h3></td>
-          <td><h3>Class Posts</h3></td>
+          <td><h3>Group Posts</h3></td>
         <% end %>
     </tr>
   </thead>
@@ -57,7 +57,7 @@
 
             <td><%= link_to 'View Class Posts', {:controller => 'posts', :action => 'index', :assignment_id => assignment.id}, class:'btn btn-default btn-sm' %></td>
             <% else %>
-            <td><h5>You must submit your post to see class posts!</h5></td>
+            <td><h5>You must submit your post to see group posts!</h5></td>
             <% end %>
           
         <% end %>

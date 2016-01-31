@@ -9,7 +9,11 @@ class PostsController < ApplicationController
       @posts = Post.where(assignment_id: @assignment.id)
     else 
       @assignment = Assignment.find(params[:assignment_id])
-      @posts = Post.where(assignment_id: @assignment.id)
+      @teammates = Array.new
+      current_user.memberships.last.group.users.each do |u|
+        @teammates << u.id
+      end
+      @posts = Post.where(assignment_id: @assignment.id, :user_id => @teammates)
       @post =  Post.where(assignment_id: @assignment.id, user_id: current_user.id).first
       ahoy.track "Visited Assignments Page"
     end
