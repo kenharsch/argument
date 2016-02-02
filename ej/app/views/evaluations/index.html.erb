@@ -72,9 +72,7 @@ table, th, td {
     <tr>
      <tr>
       <th>Title</th>
-      <th>Issue</th>
-      <th>Explanation</th>
-      <th>Opinion</th>
+      <th>Notes</th>
       <th colspan="3"></th>
     </tr>
     </tr>
@@ -84,10 +82,10 @@ table, th, td {
     <% @evaluations.each do |evaluation| %>
       <tr data-item-id=<%= "#{evaluation.id}" %> class="item">
         <td><%= evaluation.post.headline %></td>
-        <td><%= evaluation.rating_1 %></td>
-        <td><%= evaluation.rating_2 %></td>
-        <td><%= evaluation.rating_3 %></td>
-        <td><%= link_to 'Go to Evaluation', edit_evaluation_path(evaluation) %></td>
+        <td> <% unless evaluation.comment_1.nil? %>
+          <%= evaluation.comment_1.html_safe %>
+          <% end %></td>
+        <td><%= link_to 'View Post', edit_evaluation_path(evaluation) %></td>
       </tr>
     
     <% end %>

@@ -25,7 +25,6 @@
                   <td>
                   <%= form_for(@assigned_position) do |f| %> 
                  <%= f.select :position_id, @positions.all.collect {|a| [a.title, a.id]} %>
-                 <%= f.hidden_field :assignment_id, value: assignment.id %>
                  <%= f.hidden_field :user_id, value: user.id %>
                 <td><div class="actions">
                   <%= f.submit %>

@@ -38,7 +38,7 @@
     </div>
   <% else %>
     <% if Time.zone.now < @assignment.draft_deadline %>
-      <%= f.label :draft1 %>
+      <%= f.label :draft1, "Part i. Do an analysis using the framework you are assigned." %>
       <%= f.cktext_area :draft1 %><br>
     <% else %>
       <% @post.submitted = true %>
@@ -52,7 +52,7 @@
   <% end %>
   
   <% if @post.submitted %>
-    <%= f.label :draft2 %>
+    <%= f.label :draft2, "Part iii. Do a second analysis of the segment of video you used in part i of this assignment; it must be the same video segment." %>
     <%= f.cktext_area :draft2 %><br>
   <% end %>
   <br>
