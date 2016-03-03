@@ -16,9 +16,17 @@
 
   <br>
   <h4>Post By: <%= @evaluation.post.user.nickname %></h4>
-  
+  <br>
+  <h5>Draft 1</h5>
+  <br>
    <div style="width: 800px; height: 400px; overflow: auto; background-color: #FFFFFF; outline: 2px solid #A05E1D; padding: 5px", class="boxed">
   <%= @evaluation.post.draft1.html_safe %>
+  </div> 
+<br>
+<h5>Draft 2</h5>
+<br>
+<div style="width: 800px; height: 400px; overflow: auto; background-color: #FFFFFF; outline: 2px solid #A05E1D; padding: 5px", class="boxed">
+  <%= @evaluation.post.draft2.html_safe %>
   </div> 
 
   <br>

@@ -13,9 +13,23 @@
             <%= @post.position.title %>
             <% end %></h4>
 <br>
+
+<div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <% if @post.position.title == "Transcript 1" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% elsif @post.position.title == "Transcript 2" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% elsif @post.position.title == "Transcript 3" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% elsif @post.position.title == "Transcript 4" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% else %>
+  <% end %>
+</div>
+
 <h4>First Draft</h4>
 <div class="well well-lg">
-    <%= @post.draft1 %>
+    <%= @post.draft1.html_safe %>
 </div>
 <% if @post.draft2 != nil && @post.draft2.length > 0 %>
     <h4>Final Draft</h4>

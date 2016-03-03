@@ -2,7 +2,7 @@
 <h1>Evaluations</h1>
 <%else%>
 <h1>Assigned Evaluations</h1>
-<h6>Rank the assigned evaluations from best to worst in descending order. Rows can be re-ordered by clicking and dragging. The order of the rows is saved automatically. Be sure to complete the evaluation forms for each post. These forms are accessed through the "Go to Evaluation" link at the end of each row. Once you have completed the evaluation form, your numerical ratings will appear in the table below to help you with your rankings. All evaluations and rankings are anonymous.</h6>
+<h6>Rank the assigned evaluations from best to worst in descending order. Rows can be re-ordered by clicking and dragging. The order of the rows is saved automatically. If you click on Go to Evaluation at the end of the row, you will be taken to a page where you can make notes on the post. Those notes will show up in the table. All evaluations and rankings are anonymous.</h6>
 <br>
 <%end%>
 
@@ -85,7 +85,7 @@ table, th, td {
         <td> <% unless evaluation.comment_1.nil? %>
           <%= evaluation.comment_1.html_safe %>
           <% end %></td>
-        <td><%= link_to 'View Post', edit_evaluation_path(evaluation) %></td>
+        <td><%= link_to 'Go to Evaluation', edit_evaluation_path(evaluation) %></td>
       </tr>
     
     <% end %>

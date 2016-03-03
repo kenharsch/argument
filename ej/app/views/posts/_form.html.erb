@@ -18,6 +18,20 @@
 </div>
 <br>
 <br>
+
+<div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <% if @position_title == "Transcript 1" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% elsif @position_title == "Transcript 2" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% elsif @position_title == "Transcript 3" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% elsif @position_title == "Transcript 4" %>
+  <%= image_tag "transcript1.jpg" %>
+  <% else %>
+  <% end %>
+</div>
+
 <table>
  <td>  
   <%= f.hidden_field :user_id, value: current_user.id %>
@@ -25,10 +39,7 @@
   <%= f.label :headline %>
   <%= f.text_field :headline %><br>
  
-  <h4>Your assigned framework is: &nbsp<%= @position_title%></h4>
-    
-
-    
+  <h4>Your assignment is: &nbsp<%= @position_title%></h4>
   <br>
   <br>
   

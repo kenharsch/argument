@@ -37,32 +37,37 @@
    Post.create(headline: 'Headline7', draft1: 'Draft 1-7', user_id: 7, assignment_id: 2)
    Post.create(headline: 'Headline8', draft1: 'Draft 1-8', user_id: 8, assignment_id: 2)
    
-   Evaluation.create(post_id: 1, user_id: 4)
-   Evaluation.create(post_id: 3, user_id: 4)
-   Evaluation.create(post_id: 4, user_id: 4)
-   Evaluation.create(post_id: 5, user_id: 4)
 
-   Evaluation.create(post_id: 2, user_id: 3)
-   Evaluation.create(post_id: 3, user_id: 3)
-   Evaluation.create(post_id: 4, user_id: 3)
-   Evaluation.create(post_id: 5, user_id: 3)
+#   Evaluation.create(post_id: 1, user_id: 4)
+#   Evaluation.create(post_id: 3, user_id: 4)
+#   Evaluation.create(post_id: 4, user_id: 4)
+#   Evaluation.create(post_id: 5, user_id: 4)
 
-   Evaluation.create(post_id: 2, user_id: 5)
-   Evaluation.create(post_id: 4, user_id: 5)
-   Evaluation.create(post_id: 5, user_id: 5)
-   Evaluation.create(post_id: 6, user_id: 5)
+#   Evaluation.create(post_id: 2, user_id: 3)
+#   Evaluation.create(post_id: 3, user_id: 3)
+#   Evaluation.create(post_id: 4, user_id: 3)
+#   Evaluation.create(post_id: 5, user_id: 3)
 
-   Evaluation.create(post_id: 1, user_id: 6)
-   Evaluation.create(post_id: 2, user_id: 6)
-   Evaluation.create(post_id: 4, user_id: 6)
-   Evaluation.create(post_id: 6, user_id: 6)
+#   Evaluation.create(post_id: 2, user_id: 5)
+#   Evaluation.create(post_id: 4, user_id: 5)
+#   Evaluation.create(post_id: 5, user_id: 5)
+#   Evaluation.create(post_id: 6, user_id: 5)
 
-   Evaluation.create(post_id: 1, user_id: 7)
-   Evaluation.create(post_id: 3, user_id: 7)
-   Evaluation.create(post_id: 2, user_id: 7)
-   Evaluation.create(post_id: 5, user_id: 7)
+#   Evaluation.create(post_id: 1, user_id: 6)
+#   Evaluation.create(post_id: 2, user_id: 6)
+#   Evaluation.create(post_id: 4, user_id: 6)
+#   Evaluation.create(post_id: 6, user_id: 6)
 
-   Evaluation.create(post_id: 1, user_id: 8)
-   Evaluation.create(post_id: 3, user_id: 8)
-   Evaluation.create(post_id: 4, user_id: 8)
-   Evaluation.create(post_id: 6, user_id: 8)
+#   Evaluation.create(post_id: 1, user_id: 7)
+#   Evaluation.create(post_id: 3, user_id: 7)
+#   Evaluation.create(post_id: 2, user_id: 7)
+#   Evaluation.create(post_id: 5, user_id: 7)
+
+#   Evaluation.create(post_id: 1, user_id: 8)
+#   Evaluation.create(post_id: 3, user_id: 8)
+#   Evaluation.create(post_id: 4, user_id: 8)
+#   Evaluation.create(post_id: 6, user_id: 8)
+
+
+
+

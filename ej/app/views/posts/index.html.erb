@@ -7,6 +7,7 @@
     <th><h3>Headline</h3></th>
     <th><h4>Author</h4></th>
     <th><h4>Position</h4></th>
+    <th><h4># Comments</h4></th>
     <th><h4>Link</h4></th>
   </thead>
   <tbody>
@@ -21,6 +22,7 @@
             <% else %>
               <td><%= post.position.title %></td>
             <% end %>
+            <td><%= post.comments.count %></td>
             <td><%= link_to 'Go to Post', post, class:'btn btn-default btn-sm' %></td>
           </tr>
         <% else %>
