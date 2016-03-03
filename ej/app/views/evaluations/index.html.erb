@@ -13,7 +13,7 @@ table, th, td {
     border-collapse: collapse;
 }
 </style>
-<table class="table table-striped" 
+<table class="table table-striped"
 <%if !current_user.admin? %>
   id="sortable"
   <% end %> >
@@ -45,11 +45,11 @@ table, th, td {
         <td><%= link_to 'Show User', user_path(evaluation.user) %></td>
         <td><%= link_to 'Go to Evaluation', evaluation_path(evaluation) %></td>
       </tr>
-    
+
     <% end %>
-    
+
   </tbody>
-  
+
 </table>
 
 <% else %>
@@ -64,7 +64,7 @@ table, th, td {
 <h3>You have no evaluations at this time.</h3>
 <% elsif %>
 <h4><font color="green">Best At Top</font></h4>
-<table class="table table-striped" 
+<table class="table table-striped"
 <%if !current_user.admin? %>
   id="sortable"
   <% end %> >
@@ -87,11 +87,13 @@ table, th, td {
           <% end %></td>
         <td><%= link_to 'Go to Evaluation', edit_evaluation_path(evaluation) %></td>
       </tr>
-    
+
     <% end %>
   </tbody>
 </table>
 <h4><font color="red">Worst At Bottom</font></h4>
+ <%= text_area_tag 'content' %>
+
 
  <% if !current_user.admin? %>
 <%= button_to 'Submit Final', evaluations_save_rankings_path, method: :post, :data => { :confirm => 'Submit Final Rankings?' }%>
@@ -99,4 +101,3 @@ table, th, td {
 <br>
 <% end %>
 <% end %>
-

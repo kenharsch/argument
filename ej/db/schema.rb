@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129203959) do
+ActiveRecord::Schema.define(version: 20160303153506) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(version: 20160129203959) do
     t.integer  "post_id",    limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "eval_reflections", force: :cascade do |t|
+    t.integer  "user_id",       limit: 4
+    t.integer  "assignment_id", limit: 4
+    t.text     "content",       limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "evaluations", force: :cascade do |t|

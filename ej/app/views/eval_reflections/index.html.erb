@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Eval Reflections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eval_reflections.each do |eval_reflection| %>
+      <tr>
+        <td><%= link_to 'Show', eval_reflection %></td>
+        <td><%= link_to 'Edit', edit_eval_reflection_path(eval_reflection) %></td>
+        <td><%= link_to 'Destroy', eval_reflection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eval reflection', new_eval_reflection_path %>

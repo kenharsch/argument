@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :eval_reflections
   get 'evaluations/index'
   post 'evaluations/save_rankings'
   resources :evaluations do

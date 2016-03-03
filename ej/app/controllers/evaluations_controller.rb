@@ -8,7 +8,7 @@ class EvaluationsController < ApplicationController
       @evaluations = Evaluation.all
     else
       @evaluations = Evaluation.uncached do
-        Evaluation.rank(:row_order).where(:user_id=>current_user.id, :submitted => false)      
+        Evaluation.rank(:row_order).where(:user_id=>current_user.id, :submitted => false)
       end
     end
   end
@@ -24,6 +24,9 @@ class EvaluationsController < ApplicationController
   end
 
   def save_rankings
+    assi = Evaluation.where(:user_id=>current_user.id).last.post.id
+    content_from_form = params['content']
+    EvalReflection.create(user_id: current_user.id, assignment_id: assi, content: "content_from_form")
     @evaluations = Evaluation.uncached do
      Evaluation.rank(:row_order).where(:user_id=>current_user.id)
    end

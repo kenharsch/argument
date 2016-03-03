@@ -1,0 +1,17 @@
+<%= form_for(@eval_reflection) do |f| %>
+  <% if @eval_reflection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@eval_reflection.errors.count, "error") %> prohibited this eval_reflection from being saved:</h2>
+
+      <ul>
+      <% @eval_reflection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
