@@ -19,18 +19,25 @@
 <br>
 <br>
 
-<div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
-  <% if @position_title == "Transcript 1" %>
+<% if @position_title == "Transcript 1" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
   <%= image_tag "transcript1.jpg" %>
+  </div>
   <% elsif @position_title == "Transcript 2" %>
-  <%= image_tag "transcript1.jpg" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <%= image_tag "transcript2.jpg" %>
+  </div>
   <% elsif @position_title == "Transcript 3" %>
-  <%= image_tag "transcript1.jpg" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <%= image_tag "transcript3.jpg" %>
+  </div>
   <% elsif @position_title == "Transcript 4" %>
-  <%= image_tag "transcript1.jpg" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <%= image_tag "transcript4.jpg" %>
+  </div>
+  <br>
   <% else %>
   <% end %>
-</div>
 
 <table>
  <td>  
@@ -45,11 +52,15 @@
   
   <% if @post.submitted %>
     <div class="well well-lg">
+      <% if @post.draft1.nil? %>
+          <p>No Draft Submitted</p>
+        <% else %>
       <%= @post.draft1.html_safe %>
+      <% end %>
     </div>
   <% else %>
     <% if Time.zone.now < @assignment.draft_deadline %>
-      <%= f.label :draft1, "Part i. Do an analysis using the framework you are assigned." %>
+      <%= f.label :draft1, "Do a Draft of your analysis." %>
       <%= f.cktext_area :draft1 %><br>
     <% else %>
       <% @post.submitted = true %>
@@ -57,13 +68,16 @@
         <% @post.draft2 = @post.draft1 %>
       <% end %>
       <div class="well well-lg">
-        <%= @post.draft1.html_safe %>
+        <% if @post.draft1.nil? %>
+          <p>No Draft Submitted</p>
+        <% else %>
+      <%= @post.draft1.html_safe %>
       </div>
     <% end %>
   <% end %>
   
   <% if @post.submitted %>
-    <%= f.label :draft2, "Part iii. Do a second analysis of the segment of video you used in part i of this assignment; it must be the same video segment." %>
+    <%= f.label :draft2, "Revise your draft." %>
     <%= f.cktext_area :draft2 %><br>
   <% end %>
   <br>

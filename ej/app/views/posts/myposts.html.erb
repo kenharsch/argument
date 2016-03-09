@@ -19,7 +19,11 @@
             <% end %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= if post.submitted then 'Submitted' end %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to 'Go to Post', post, class:'btn btn-default btn-sm' %></h4>
           <h4>First Draft</h4>
           <div class="well well-lg">
+            <% if post.draft1.nil? %>
+          <p>No Draft Submitted</p>
+          <% else %>
             <%= post.draft1.html_safe %>
+            <% end %>
           </div>
           <% if post.draft2 != nil && post.draft2.length > 0 %>
             <h4>Final Draft</h4>
