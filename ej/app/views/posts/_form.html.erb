@@ -44,8 +44,14 @@
   <br>
   
   <% if @post.submitted %>
-    <div class="well well-lg">
+   <div class="well well-lg">
+        
+         <% if @post.draft1.nil? %>
+          <p>No Draft Submitted</p>
+        <% else %>
       <%= @post.draft1.html_safe %>
+      <% end %>
+
     </div>
   <% else %>
     <% if Time.zone.now < @assignment.draft_deadline %>
@@ -57,7 +63,12 @@
         <% @post.draft2 = @post.draft1 %>
       <% end %>
       <div class="well well-lg">
-        <%= @post.draft1.html_safe %>
+        <% if @post.draft1.nil? %>
+          <p>No Draft Submitted</p>
+        <% else %>
+      <%= @post.draft1.html_safe %>
+      <% end %>
+        
       </div>
     <% end %>
   <% end %>
