@@ -14,22 +14,33 @@
             <% end %></h4>
 <br>
 
-<div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
   <% if @post.position.title == "Transcript 1" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
   <%= image_tag "transcript1.jpg" %>
+  </div>
   <% elsif @post.position.title == "Transcript 2" %>
-  <%= image_tag "transcript1.jpg" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <%= image_tag "transcript2.jpg" %>
+  </div>
   <% elsif @post.position.title == "Transcript 3" %>
-  <%= image_tag "transcript1.jpg" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <%= image_tag "transcript3.jpg" %>
+  </div>
   <% elsif @post.position.title == "Transcript 4" %>
-  <%= image_tag "transcript1.jpg" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+  <%= image_tag "transcript4.jpg" %>
+  </div>
   <% else %>
   <% end %>
-</div>
+
 
 <h4>First Draft</h4>
 <div class="well well-lg">
+    <% if @post.draft1.nil? %>
+  <p>No Draft Submitted</p>
+  <% else %>
     <%= @post.draft1.html_safe %>
+    <% end %>
 </div>
 <% if @post.draft2 != nil && @post.draft2.length > 0 %>
     <h4>Final Draft</h4>

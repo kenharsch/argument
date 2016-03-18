@@ -36,5 +36,13 @@ class User < ActiveRecord::Base
     end
     return delta
   end
+
+  def babyname
+      bnames = Array.new
+      bnames = ["Delinda", "Kortney", "Dede", "Karolyn", "Elvina", "Leora", "Herbert", "Leone", "Emelda", "Coralee", "Ammie", 
+          "Ricardo", "Brandi", "Ozell", "Lance", "Larraine", "Branden", "Fae", "Norman", "Quentin", "Manuela", "Rachell",
+          "Federico", "Dorene", "Beverlee", "Randall", "Dona", "Calandra", "Yolande"]
+        return bnames[self.id]
+    end
    
 end

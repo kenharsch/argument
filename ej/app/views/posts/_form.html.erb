@@ -19,18 +19,25 @@
 <br>
 <br>
 
-<div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
+
   <% if @position_title == "Transcript 1" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
   <%= image_tag "transcript1.jpg" %>
+  </div>
   <% elsif @position_title == "Transcript 2" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
   <%= image_tag "transcript1.jpg" %>
+  </div>
   <% elsif @position_title == "Transcript 3" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
   <%= image_tag "transcript1.jpg" %>
+  </div>
   <% elsif @position_title == "Transcript 4" %>
+  <div style="height:200px;width: auto; resize:both; border:1px solid #ccc; overflow:auto;">
   <%= image_tag "transcript1.jpg" %>
-  <% else %>
+  </div>
   <% end %>
-</div>
+
 
 <table>
  <td>  
@@ -41,8 +48,21 @@
  
   <h4>Your assignment is: &nbsp<%= @position_title%></h4>
   <br>
+  <% if @position_title == "Transcript 3-1" %>
+  <a href="javascript: window.open('<%= group_path(1) %>', 'See Group', 'height=500, width=700')" class="btn btn-warning">Go To Transcript</a>
+  <% elsif @position_title == "Transcript 3-2" %>
+  <a href="javascript: window.open('<%= group_path(2) %>', 'See Group', 'height=500, width=700')" class="btn btn-warning">Go To Transcript</a>
+  <% elsif @position_title == "Transcript 3-3" %>
+  <a href="javascript: window.open('<%= group_path(3) %>', 'See Group', 'height=500, width=700')" class="btn btn-warning">Go To Transcript</a>
+  <% elsif @position_title == "Transcript 3-4" %>
+  <a href="javascript: window.open('<%= group_path(4) %>', 'See Group', 'height=500, width=700')" class="btn btn-warning">Go To Transcript</a>
+  <% elsif @position_title == "Transcript 3-5" %>
+  <a href="javascript: window.open('<%= group_path(5) %>', 'See Group', 'height=500, width=700')" class="btn btn-warning">Go To Transcript</a>
+  <% elsif @position_title == "Transcript 3-6" %>
+  <a href="javascript: window.open('<%= group_path(6) %>', 'See Assigned Group', 'height=500, width=700')" class="btn btn-warning">Go To Transcript</a>
+  <% end %>
   <br>
-  
+  <br>
   <% if @post.submitted %>
    <div class="well well-lg">
         
@@ -53,9 +73,10 @@
       <% end %>
 
     </div>
+    <br>
   <% else %>
     <% if Time.zone.now < @assignment.draft_deadline %>
-      <%= f.label :draft1, "Part i. Do an analysis using the framework you are assigned." %>
+      <%= f.label :draft1 %>
       <%= f.cktext_area :draft1 %><br>
     <% else %>
       <% @post.submitted = true %>

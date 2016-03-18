@@ -4,6 +4,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments.json
   def index
     @assignments = Assignment.all
+    @posts = Post.where(id: [14, 5, 17])
   end
 
   # GET /assignments/1
