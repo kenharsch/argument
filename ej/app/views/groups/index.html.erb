@@ -39,7 +39,7 @@
         <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= group.id %></td>
         <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><% group.memberships.each do |membership| %>
           
-        <%= membership.user.babyname %><br>
+        <%= membership.user.nickname %><br>
       
         <% end %></td>
         <td><%= link_to 'View Transcript', group_path(group) %></td>
