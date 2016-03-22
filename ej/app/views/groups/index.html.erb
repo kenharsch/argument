@@ -3,15 +3,17 @@
 <h1>Groups</h1>
 
 <table class="table table-bordered">
-  <thead>
+  
+<% if current_user.admin %>
+<thead>
     <tr>
       <th>Group Number</th>
       <th>Group Members</th>
       <th>Edit</th>
       <th>Destroy</th>
+      <th>Transcript</th>
       </tr>
   </thead>
-
   <tbody>
     <% @groups.each do |group| %>
       <tr>
@@ -26,9 +28,30 @@
         <% end %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Transcript', group_path(group) %></td>
       </tr>
     <% end %>
   </tbody>
+<% else %>
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= group.id %></td>
+        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><% group.memberships.each do |membership| %>
+          
+        <%= membership.user.babyname %><br>
+      
+        <% end %></td>
+        <td><%= link_to 'View Transcript', group_path(group) %></td>
+       </td>
+      </tr>
+    <% end %>
+  </tbody>
+<% end %>
+
+
+
+
 </table>
 
 <br>
