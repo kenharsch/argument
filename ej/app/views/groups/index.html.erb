@@ -32,6 +32,9 @@
       </tr>
     <% end %>
   </tbody>
+</table>
+<br>
+  <%= link_to 'New Group', new_group_path %>
 <% else %>
   <tbody>
     <% @groups.each do |group| %>
@@ -47,13 +50,9 @@
       </tr>
     <% end %>
   </tbody>
-<% end %>
-
-
-
 
 </table>
-
+<% end %>
 <br>
 
-<%= link_to 'New Group', new_group_path %>
+
